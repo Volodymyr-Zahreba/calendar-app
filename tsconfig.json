@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "types": ["vitest/globals"],
+    "paths": {}
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue", "tests/**/*.ts"]
+}
