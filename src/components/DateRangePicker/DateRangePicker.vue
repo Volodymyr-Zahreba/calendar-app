@@ -221,9 +221,9 @@ const floatingRef = ref<HTMLElement | null>(null)
 const fieldRef = ref<HTMLElement | null>(null)
 const calendarRef = ref<InstanceType<typeof Calendar> | null>(null)
 
-const { floatingStyles, update } = useFloating(departureRef, floatingRef, {
+const { floatingStyles, update } = useFloating(fieldRef, floatingRef, {
   placement: 'bottom-start',
-  middleware: [offset(8), flip(), shift({ padding: 16 })],
+  middleware: [offset(8), flip(), shift({ padding: 8 })],
   whileElementsMounted: autoUpdate,
 })
 

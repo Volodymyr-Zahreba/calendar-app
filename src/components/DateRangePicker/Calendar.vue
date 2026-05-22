@@ -419,6 +419,10 @@ defineExpose({ autoScroll, focusFirst })
   width: 744px;
   padding: 32px;
   padding-top: 56px; /* space for nav buttons */
+  max-height: calc(100vh - 120px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .dr-prev,
@@ -463,7 +467,7 @@ defineExpose({ autoScroll, focusFirst })
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   gap: 24px;

@@ -45,9 +45,9 @@ const departureRef = ref(null);
 const floatingRef = ref(null);
 const fieldRef = ref(null);
 const calendarRef = ref(null);
-const { floatingStyles, update } = useFloating(departureRef, floatingRef, {
+const { floatingStyles, update } = useFloating(fieldRef, floatingRef, {
     placement: 'bottom-start',
-    middleware: [offset(8), flip(), shift({ padding: 16 })],
+    middleware: [offset(8), flip(), shift({ padding: 8 })],
     whileElementsMounted: autoUpdate,
 });
 const returnRef = ref(null);
