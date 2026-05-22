@@ -72,14 +72,22 @@ __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
     ...{ class: "app" },
 });
 /** @type {__VLS_StyleScopedClasses['app']} */ ;
+__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+    ...{ class: "app__hero" },
+});
+/** @type {__VLS_StyleScopedClasses['app__hero']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.h1, __VLS_intrinsics.h1)({
     ...{ class: "app__title" },
 });
 /** @type {__VLS_StyleScopedClasses['app__title']} */ ;
-__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-    ...{ class: "app__demo" },
+__VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({
+    ...{ class: "app__subtitle" },
 });
-/** @type {__VLS_StyleScopedClasses['app__demo']} */ ;
+/** @type {__VLS_StyleScopedClasses['app__subtitle']} */ ;
+__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+    ...{ class: "app__card" },
+});
+/** @type {__VLS_StyleScopedClasses['app__card']} */ ;
 const __VLS_0 = DateRangePicker;
 // @ts-ignore
 const __VLS_1 = __VLS_asFunctionalComponent1(__VLS_0, new __VLS_0({
@@ -94,19 +102,7 @@ const __VLS_2 = __VLS_1({
     maxDate: (__VLS_ctx.maxDate),
     locale: "en-US",
 }, ...__VLS_functionalComponentArgsRest(__VLS_1));
-if (__VLS_ctx.dateRange) {
-    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-        ...{ class: "app__result" },
-    });
-    /** @type {__VLS_StyleScopedClasses['app__result']} */ ;
-    __VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({});
-    __VLS_asFunctionalElement1(__VLS_intrinsics.strong, __VLS_intrinsics.strong)({});
-    (__VLS_ctx.formatDate(__VLS_ctx.dateRange.start));
-    __VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({});
-    __VLS_asFunctionalElement1(__VLS_intrinsics.strong, __VLS_intrinsics.strong)({});
-    (__VLS_ctx.formatDate(__VLS_ctx.dateRange.end));
-}
 // @ts-ignore
-[dateRange, dateRange, dateRange, dateRange, minDate, maxDate, formatDate, formatDate,];
+[dateRange, minDate, maxDate,];
 const __VLS_export = (await import('vue')).defineComponent({});
 export default {};

@@ -13,11 +13,26 @@
         aria-haspopup="dialog"
         @click="handleDepartureTriggerClick"
       >
-        <span class="dr-field__label">Departure</span>
-        <span class="dr-field__value">{{ formattedStart }}</span>
+        <span class="dr-field__icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </span>
+        <span class="dr-field__text">
+          <span class="dr-field__label">Departure</span>
+          <span class="dr-field__value">{{ formattedStart }}</span>
+        </span>
       </button>
 
-      <div class="dr-field__separator" aria-hidden="true">→</div>
+      <div class="dr-field__separator" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </div>
 
       <button
         ref="returnRef"
@@ -30,8 +45,15 @@
         aria-haspopup="dialog"
         @click="handleReturnTriggerClick"
       >
-        <span class="dr-field__label">Return</span>
-        <span class="dr-field__value">{{ formattedEnd }}</span>
+        <span class="dr-field__icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/>
+          </svg>
+        </span>
+        <span class="dr-field__text">
+          <span class="dr-field__label">Return</span>
+          <span class="dr-field__value">{{ formattedEnd }}</span>
+        </span>
       </button>
     </div>
 
@@ -348,64 +370,92 @@ onUnmounted(() => {
   display: inline-flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  min-width: 420px;
 }
 
 .dr-field__inputs {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 0;
-  border: 1px solid #d1d5db;
-  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
   overflow: hidden;
   background: #fff;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.06);
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.dr-field__inputs:focus-within {
+  border-color: #0ea5e9;
+  box-shadow: 0 2px 16px rgba(14, 165, 233, 0.14);
 }
 
 .dr-field__input {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 12px 16px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  min-width: 160px;
+  min-width: 0;
   transition: background-color 0.15s;
   position: relative;
 }
 
 .dr-field__input:hover {
-  background-color: #f9fafb;
+  background-color: #f0f9ff;
 }
 
 .dr-field__input--active {
-  /* Highlight active field with a shadow/border */
-  box-shadow: inset 0 0 0 2px #2563eb;
-  border-radius: 11px;
-  background-color: #eff6ff;
+  box-shadow: inset 0 0 0 2px #0ea5e9;
+  border-radius: 14px;
+  background-color: #f0f9ff;
+}
+
+.dr-field__icon {
+  color: #0ea5e9;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dr-field__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .dr-field__label {
   font-size: 11px;
-  font-weight: 600;
-  color: #6b7280;
+  font-weight: 700;
+  color: #0ea5e9;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .dr-field__value {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   color: #111827;
-  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dr-field__separator {
-  color: #9ca3af;
-  padding: 0 8px;
+  color: #c4b5fd;
+  padding: 0 4px;
   user-select: none;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  align-self: center;
 }
 
 .dr-popup {

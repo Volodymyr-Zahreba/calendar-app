@@ -406,8 +406,8 @@ defineExpose({ autoScroll, focusFirst })
 <style scoped>
 .dr-calendar {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -439,7 +439,9 @@ defineExpose({ autoScroll, focusFirst })
 
 .dr-prev:hover:not([disabled]),
 .dr-next:hover:not([disabled]) {
-  background-color: #f3f4f6;
+  background-color: #e0f2fe;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
 }
 
 .dr-prev:disabled,

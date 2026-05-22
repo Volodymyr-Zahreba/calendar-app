@@ -1,19 +1,17 @@
 <template>
   <div class="app">
-    <h1 class="app__title">Date Range Picker</h1>
+    <div class="app__hero">
+      <h1 class="app__title">Date Range Picker</h1>
+      <p class="app__subtitle">Select your travel dates</p>
+    </div>
 
-    <div class="app__demo">
+    <div class="app__card">
       <DateRangePicker
         v-model="dateRange"
         :min-date="minDate"
         :max-date="maxDate"
         locale="en-US"
       />
-    </div>
-
-    <div class="app__result" v-if="dateRange">
-      <p><strong>Start:</strong> {{ formatDate(dateRange.start) }}</p>
-      <p><strong>End:</strong> {{ formatDate(dateRange.end) }}</p>
     </div>
   </div>
 </template>
@@ -88,35 +86,51 @@ function formatDate(d: Date): string {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f9fafb;
+  background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  min-height: 100vh;
   color: #111827;
 }
 </style>
 
 <style scoped>
 .app {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.app__hero {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 .app__title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 32px;
-  color: #111827;
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: #fff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
 
-.app__demo {
-  margin-bottom: 32px;
+.app__subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.01em;
 }
 
-.app__result {
+.app__card {
   background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
-  font-size: 15px;
-  line-height: 1.6;
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
