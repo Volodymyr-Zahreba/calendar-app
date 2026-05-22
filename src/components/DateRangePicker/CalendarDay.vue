@@ -92,12 +92,12 @@ function handleKeydown(e: KeyboardEvent) {
   position: relative;
   outline: none;
   user-select: none;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: background-color 0.15s ease;
 }
 
 .dr-day:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #6366f1;
   outline-offset: 2px;
   z-index: 1;
 }
@@ -112,44 +112,55 @@ function handleKeydown(e: KeyboardEvent) {
   margin: 0 auto;
   font-size: 14px;
   line-height: 1;
+  color: #1e293b;
 }
 
-.dr-day:hover:not(.dr-day--disabled) .dr-day__inner {
-  background-color: #e5e7eb;
+.dr-day:hover:not(.dr-day--disabled):not(.is-start):not(.is-end) .dr-day__inner {
+  background-color: #f1f5f9;
 }
 
-.dr-day--other-month {
-  color: #9ca3af;
+.dr-day--other-month .dr-day__inner {
+  color: #cbd5e1;
 }
 
 .dr-day--disabled {
-  color: #d1d5db;
+  color: #cbd5e1;
   cursor: not-allowed;
 }
 
 .dr-day--disabled .dr-day__inner {
-  opacity: 0.4;
+  color: #cbd5e1;
+  opacity: 1;
 }
 
 .dr-day.is-start,
 .dr-day.is-end {
-  background-color: #dbeafe;
+  background-color: #ede9fe;
 }
 
 .dr-day.is-start .dr-day__inner,
 .dr-day.is-end .dr-day__inner {
-  background-color: #2563eb;
+  background-color: #6366f1;
   color: #fff;
+  border-radius: 50%;
 }
 
 .dr-day.is-in-range {
-  background-color: #dbeafe;
+  background-color: #ede9fe;
   border-radius: 0;
 }
 
+.dr-day.is-in-range .dr-day__inner {
+  color: #4338ca;
+}
+
 .dr-day.is-hover-range {
-  background-color: #eff6ff;
+  background-color: #f5f3ff;
   border-radius: 0;
+}
+
+.dr-day.is-hover-range .dr-day__inner {
+  color: #4338ca;
 }
 
 .dr-day.is-today .dr-day__inner {

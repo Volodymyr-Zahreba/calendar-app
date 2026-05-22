@@ -86,7 +86,7 @@ function formatDate(d: Date): string {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
   min-height: 100vh;
   color: #111827;
 }
@@ -125,10 +125,10 @@ body {
 }
 
 .app__card {
-  background: #fff;
+  background: white;
   border-radius: 24px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
-  padding: 32px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;

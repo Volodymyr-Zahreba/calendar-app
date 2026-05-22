@@ -407,7 +407,8 @@ defineExpose({ autoScroll, focusFirst })
 .dr-calendar {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.10);
+  border: 1px solid #e2e8f0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -424,24 +425,23 @@ defineExpose({ autoScroll, focusFirst })
 .dr-next {
   position: absolute;
   top: 32px;
-  background: none;
-  border: 1px solid #e5e7eb;
+  background: #f1f5f9;
+  border: none;
   border-radius: 8px;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #374151;
+  color: #475569;
   transition: background-color 0.15s;
 }
 
 .dr-prev:hover:not([disabled]),
 .dr-next:hover:not([disabled]) {
-  background-color: #e0f2fe;
-  border-color: #0ea5e9;
-  color: #0ea5e9;
+  background-color: #e2e8f0;
+  color: #1e293b;
 }
 
 .dr-prev:disabled,
@@ -540,7 +540,7 @@ defineExpose({ autoScroll, focusFirst })
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  color: #6b7280;
+  color: #94a3b8;
   padding: 8px 0;
 }
 
@@ -567,7 +567,7 @@ defineExpose({ autoScroll, focusFirst })
 
 .dr-done {
   width: 100%;
-  background-color: #2563eb;
+  background-color: #6366f1;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -579,7 +579,7 @@ defineExpose({ autoScroll, focusFirst })
 }
 
 .dr-done:hover {
-  background-color: #1d4ed8;
+  background-color: #4f46e5;
 }
 
 /* Aria live region - visually hidden */

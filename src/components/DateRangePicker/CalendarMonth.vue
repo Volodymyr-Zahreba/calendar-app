@@ -182,7 +182,7 @@ function handleDayKeydown(e: KeyboardEvent, date: Date) {
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  color: #6b7280;
+  color: #94a3b8;
   padding: 0;
 }
 
