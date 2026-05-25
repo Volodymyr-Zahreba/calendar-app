@@ -63,34 +63,25 @@ function getEndMonthEl() {
     const iso = `${props.end.getFullYear()}-${String(props.end.getMonth() + 1).padStart(2, '0')}`;
     return scrollRef.value?.querySelector(`[data-month="${iso}"]`) ?? null;
 }
-async function autoScroll() {
+async function autoScroll(animated = false) {
     await nextTick();
-    const behavior = prefersReducedMotion() ? 'auto' : 'smooth';
+    const behavior = (!animated || prefersReducedMotion()) ? 'instant' : 'smooth';
     if (props.isMobile) {
-        let target;
-        if (props.activeField === 'from') {
-            target = getStartMonthEl();
-        }
-        else {
-            target = getEndMonthEl();
-        }
+        const target = props.activeField === 'from' ? getStartMonthEl() : getEndMonthEl();
         target?.scrollIntoView({ block: 'start', behavior });
     }
     else {
-        // Desktop
         if (props.activeField === 'from') {
             const el = getStartMonthEl();
             el?.scrollIntoView({ inline: 'start', behavior });
         }
         else {
-            // Try endMonth - 1
             const prevEnd = addMonths(props.end, -1);
-            let el = getMonthEl(prevEnd) ?? getEndMonthEl();
+            const el = getMonthEl(prevEnd) ?? getEndMonthEl();
             el?.scrollIntoView({ inline: 'start', behavior });
         }
     }
-    // Update scroll state after scroll
-    setTimeout(updateScrollState, 350);
+    setTimeout(updateScrollState, 50);
 }
 onMounted(async () => {
     await autoScroll();

@@ -30,8 +30,8 @@ const seed = params.get('seed')
 const today = new Date()
 const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate())
 
-let initialStart = todayStart
-let initialEnd = new Date(todayStart.getFullYear(), todayStart.getMonth(), todayStart.getDate() + 7)
+let initialStart = new Date(todayStart.getFullYear(), todayStart.getMonth(), todayStart.getDate() + 14)
+let initialEnd = new Date(todayStart.getFullYear(), todayStart.getMonth(), todayStart.getDate() + 21)
 
 if (seed) {
   const parts = seed.split(',')
@@ -86,7 +86,7 @@ function formatDate(d: Date): string {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+  background: #f0f2f5;
   min-height: 100vh;
   color: #111827;
 }
@@ -98,8 +98,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .app__hero {
@@ -111,23 +111,22 @@ body {
   font-size: 38px;
   font-weight: 800;
   margin: 0 0 10px 0;
-  color: #fff;
+  color: #0f172a;
   letter-spacing: -0.5px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
 
 .app__subtitle {
   font-size: 17px;
   font-weight: 400;
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: #64748b;
   letter-spacing: 0.01em;
 }
 
 .app__card {
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   padding: 8px;
   display: flex;
   align-items: center;

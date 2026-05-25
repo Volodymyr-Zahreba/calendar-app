@@ -9,8 +9,8 @@ const params = new URLSearchParams(window.location.search);
 const seed = params.get('seed');
 const today = new Date();
 const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-let initialStart = todayStart;
-let initialEnd = new Date(todayStart.getFullYear(), todayStart.getMonth(), todayStart.getDate() + 7);
+let initialStart = new Date(todayStart.getFullYear(), todayStart.getMonth(), todayStart.getDate() + 14);
+let initialEnd = new Date(todayStart.getFullYear(), todayStart.getMonth(), todayStart.getDate() + 21);
 if (seed) {
     const parts = seed.split(',');
     if (parts.length === 2) {

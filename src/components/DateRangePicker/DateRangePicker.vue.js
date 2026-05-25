@@ -46,8 +46,8 @@ const floatingRef = ref(null);
 const fieldRef = ref(null);
 const calendarRef = ref(null);
 const { floatingStyles, update } = useFloating(fieldRef, floatingRef, {
-    placement: 'bottom-start',
-    middleware: [offset(8), flip(), shift({ padding: 8 })],
+    placement: 'bottom',
+    middleware: [offset(16), flip(), shift({ padding: 8 })],
     whileElementsMounted: autoUpdate,
 });
 const returnRef = ref(null);
@@ -67,7 +67,7 @@ function openPopup(field) {
     isOpen.value = true;
     nextTick(async () => {
         if (calendarRef.value) {
-            await calendarRef.value.autoScroll();
+            await calendarRef.value.autoScroll(false);
         }
     });
 }
