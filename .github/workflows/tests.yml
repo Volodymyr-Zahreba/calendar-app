@@ -2,8 +2,7 @@ name: Test Suite
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'   # 11:00 UTC+3
-    - cron: '0 9 * * 1-5'  # 12:00 UTC+3
+    - cron: '50 8 * * *'  # тест: 08:50 UTC (сегодня ~через 5 мин)
   workflow_dispatch:       # ручной запуск из GitHub UI
 
 jobs:
