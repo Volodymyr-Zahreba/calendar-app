@@ -473,6 +473,12 @@ onUnmounted(() => {
   z-index: 9999;
 }
 
+@media (max-width: 767.98px) {
+  .dr-field {
+    min-width: 0;
+  }
+}
+
 /* Aria live region - visually hidden */
 .dr-live {
   position: absolute;

@@ -477,12 +477,13 @@ defineExpose({ autoScroll, focusFirst })
   position: fixed;
   inset: 0;
   height: 100dvh;
-  width: 100%;
   border-radius: 0;
   box-shadow: none;
+  border: none;
   display: flex;
   flex-direction: column;
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 .dr-header--mobile {

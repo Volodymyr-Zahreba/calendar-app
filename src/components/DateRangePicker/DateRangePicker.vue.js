@@ -192,6 +192,7 @@ let __VLS_intrinsics;
 let __VLS_directives;
 /** @type {__VLS_StyleScopedClasses['dr-field__inputs']} */ ;
 /** @type {__VLS_StyleScopedClasses['dr-field__input']} */ ;
+/** @type {__VLS_StyleScopedClasses['dr-field']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
     ...{ class: "dr-field" },
     ref: "fieldRef",

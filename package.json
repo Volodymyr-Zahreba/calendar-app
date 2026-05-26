@@ -6,9 +6,14 @@
   "scripts": {
     "dev": "vite --port 5173",
     "build": "vue-tsc && vite build",
+    "serve": "vite build && vite preview --port 4173 --host",
     "test:unit": "vitest run",
-    "test:e2e": "playwright test",
-    "serve": "vite build && vite preview --port 4173 --host"
+    "pw:all": "pnpm bddgen && pnpm exec playwright test",
+    "pw:desktop": "pnpm bddgen && pnpm exec playwright test --project=bdd-desktop",
+    "pw:mobile": "pnpm bddgen && pnpm exec playwright test --project=bdd-mobile",
+    "pw:ui": "pnpm bddgen && pnpm exec playwright test --ui-host=0.0.0.0 --ui-port=8080",
+    "pw:ui:desktop": "pnpm bddgen && pnpm exec playwright test --project=bdd-desktop --ui-host=0.0.0.0 --ui-port=8080",
+    "pw:ui:mobile": "pnpm bddgen && pnpm exec playwright test --project=bdd-mobile --ui-host=0.0.0.0 --ui-port=8080"
   },
   "dependencies": {
     "@floating-ui/vue": "^1.1.11",
@@ -20,6 +25,7 @@
     "@vitest/ui": "^4.1.7",
     "@vue/test-utils": "^2.4.10",
     "happy-dom": "^20.9.0",
+    "playwright-bdd": "^8.5.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.13",
     "vitest": "^4.1.7",

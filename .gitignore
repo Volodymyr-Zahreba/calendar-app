@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated BDD specs (regenerated before each run)
+.features-gen/
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
